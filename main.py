@@ -1,11 +1,10 @@
 import os
-import re
 
 def is_bootfile(filepath):
     with open(filepath, 'rb') as fd:
         text = fd.read(32)
         if(text[11:16] == b'\x42\x6F\x6F\x74\x30'):
-            print(text[0:4], filepath, sep =' ')
+
             return True
         else:
             return False
